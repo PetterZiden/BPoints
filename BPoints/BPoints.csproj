@@ -6,6 +6,15 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="EntityFramework" Version="6.2.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Remove="wwwroot\images\banner1.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="Models\Rewards\" />
+    <Folder Include="Models\Services\" />
+  </ItemGroup>
 </Project>
