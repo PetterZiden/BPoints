@@ -1,0 +1,20 @@
+﻿
+@using BPoints.Models
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BPoints</title>
+</head>
+<body>
+    <h3>Index</h3>
+    @foreach (User item in (User[])ViewBag.bands)
+    {
+        <span>@item.UserName</span>
+        <a href="details/@item.UserId">Details</a>
+        <br />
+    }
+</body>
+</html>
