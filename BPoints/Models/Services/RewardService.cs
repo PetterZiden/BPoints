@@ -1,19 +1,15 @@
 ﻿using System;
-namespace BPoints.Models.Services
+using System.Collections.Generic;
+
+namespace BPoints.Models.Rewards
 {
     public class RewardService
     {
-        public RewardService()
+        private static List<Rewards> rewards = new List<Rewards>
         {
-            User u1 = new User(1, "Petter", 10, 2);
-            User u2 = new User(2, "Alma", 10, 1);
+            new RewardMassage { RewardName = "Massage", PointCost = 10 },
+        };
 
-        }
 
-        public void addPoints(User user)
-        {
-            int userToReward = user.ConnectedUserId;
-
-        }
     }
 }

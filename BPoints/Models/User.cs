@@ -8,13 +8,5 @@ namespace BPoints.Models
         public int BPoints { get; set; }
         public int ConnectedUserId { get; set; }
 
-        public User(int userId, string userName, int bPoints, int connectedUserId)
-        {
-            UserId = userId;
-            UserName = userName;
-            BPoints = bPoints;
-            ConnectedUserId = connectedUserId;
-            
-        }
     }
 }

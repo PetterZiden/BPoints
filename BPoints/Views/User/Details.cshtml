@@ -1,0 +1,23 @@
+﻿@using BPoints.Models
+@{
+    User currentUser = ViewBag.band;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@currentUser.UserName</title>
+</head>
+<body>
+    <h1>@currentUser.UserName</h1>
+    <br />
+    <h4>Genre: @currentUser.BPoints</h4>
+    <br />
+    <img src="@currentUser.UserId" />
+    <br />
+    <a href="..">Back</a>
+</body>
+</html>
