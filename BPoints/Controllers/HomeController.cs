@@ -12,15 +12,17 @@ namespace BPoints.Controllers
 {
     public class HomeController : Controller
     {
-        UserService _userService;
-        RewardService _rewardService;
+        private readonly UserService _userService;
+        private readonly RewardService _rewardService;
 
         public HomeController(UserService userService, RewardService rewardService)
         {
             _userService = userService;
             _rewardService = rewardService;
         }
+
         [Route("")]
+        [HttpGet]
         [Route("index")]
         public IActionResult Index()
         {
@@ -28,12 +30,42 @@ namespace BPoints.Controllers
             return View();
         }
 
+        [HttpGet]
         [Route("details/{id}")]
         public IActionResult Details(int id)
         {
-            ViewBag.band = _service.GetBandById(id);
+            User currentUser = _userService.GetUserById(id);
+            int linkedConnectedId = currentUser.ConnectedUserId;
+            User linkedUser = _userService.GetUserById(linkedConnectedId);
+            ViewBag.user = currentUser;
+            ViewBag.linkedUser = linkedUser;
             return View();
         }
 
+        [HttpGet]
+        [Route("addpoints/{id}")]
+        public IActionResult AddPoints(int id)
+        {
+            User currentUser = _userService.GetUserById(id);
+            int linkedConnectedId = currentUser.ConnectedUserId;
+            User linkedUser = _userService.GetUserById(linkedConnectedId);
+            _userService.AddPoints(linkedUser, 15);
+            ViewBag.user = currentUser;
+            ViewBag.linkedUser = linkedUser;
+            return View();
+        }
+
+        /*[HttpPost]
+        [Route("addpoints/{id}")]
+        public IActionResult AddPoints(User user)
+        {
+            User currentUser = user;
+            int linkedConnectedId = currentUser.ConnectedUserId;
+            User linkedUser = _userService.GetUserById(linkedConnectedId);
+            _userService.AddPoints(linkedUser, 15);
+            ViewBag.user = currentUser;
+            ViewBag.linkedUser = linkedUser;
+            return RedirectToAction(nameof(Details));
+        }*/
     }
 }

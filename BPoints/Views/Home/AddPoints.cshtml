@@ -1,3 +1,26 @@
-﻿@page
+﻿@using BPoints.Models
 @{
+    User currentUser = ViewBag.user;
+    User linkedUser = ViewBag.linkedUser;
 }
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Add points</title>
+</head>
+<body>
+    <h1>@currentUser.UserName</h1>
+    <br />
+    <h4>Add points to </h4><p>@linkedUser.UserName</p>
+    <br />
+    <p>@linkedUser.UserName current points: @linkedUser.BPoints</p>
+    <br />
+    <form method="get" action="">
+        <input type="text" name="Points" asp-controller="AddPoints"/>
+        <input type="submit" value="Submit" />
+    </form>
+    <a href="..">Back</a>
+</body>
+</html>

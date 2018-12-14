@@ -1,6 +1,7 @@
 ﻿@using BPoints.Models
 @{
-    User currentUser = ViewBag.band;
+    User currentUser = ViewBag.user;
+    User linkedUser = ViewBag.linkedUser;
 }
 
 
@@ -14,9 +15,11 @@
 <body>
     <h1>@currentUser.UserName</h1>
     <br />
-    <h4>Genre: @currentUser.BPoints</h4>
+    <h4>Id: </h4><p>@currentUser.UserId</p>
     <br />
-    <img src="@currentUser.UserId" />
+    <h4>Points: </h4><p>@currentUser.BPoints<p>
+    <br />
+    <h4>Linked User: </h4><p>@linkedUser.UserName</p>
     <br />
     <a href="..">Back</a>
 </body>

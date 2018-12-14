@@ -10,10 +10,11 @@
 </head>
 <body>
     <h3>Index</h3>
-    @foreach (User item in (User[])ViewBag.bands)
+    @foreach (User item in (User[])ViewBag.users)
     {
         <span>@item.UserName</span>
         <a href="details/@item.UserId">Details</a>
+        <a href="addpoints/@item.UserId">Add points</a>
         <br />
     }
 </body>

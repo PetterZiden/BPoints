@@ -13,17 +13,16 @@ namespace BPoints.Models.Services
             new User { UserId = 2, UserName = "Alma", BPoints = 5, ConnectedUserId = 1 },
         };
 
-        public User GetUserById(int id) => users.Single(b => b.UserId == id);
+        public User GetUserById(int id) => users.FirstOrDefault(b => b.UserId == id);
 
 
         public User[] GetAllUsers() => users.ToArray();
 
-        public void addPoints(User user)
+        public void AddPoints(User user, int pointsToAdd)
         {
-            int userToReward = user.ConnectedUserId;
+            user.BPoints += pointsToAdd;
 
         }
-
     }
 }
 
