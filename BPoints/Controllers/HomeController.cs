@@ -59,7 +59,6 @@ namespace BPoints.Controllers
         [Route("addpoints/{id}")]
         public IActionResult AddPoints(int id, int Points)
         {
-            //User currentUser = user;
             User currentUser = _userService.GetUserById(id);
             int linkedConnectedId = currentUser.ConnectedUserId;
             User linkedUser = _userService.GetUserById(linkedConnectedId);
