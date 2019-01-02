@@ -13,6 +13,7 @@
     @foreach (User item in (User[])ViewBag.users)
     {
         <span>@item.UserName</span>
+        <span>@item.BPoints</span>
         <a href="details/@item.UserId">Details</a>
         <a href="addpoints/@item.UserId">Add points</a>
         <br />

@@ -49,23 +49,24 @@ namespace BPoints.Controllers
             User currentUser = _userService.GetUserById(id);
             int linkedConnectedId = currentUser.ConnectedUserId;
             User linkedUser = _userService.GetUserById(linkedConnectedId);
-            _userService.AddPoints(linkedUser, 15);
             ViewBag.user = currentUser;
             ViewBag.linkedUser = linkedUser;
+
             return View();
         }
 
-        /*[HttpPost]
+        [HttpPost]
         [Route("addpoints/{id}")]
-        public IActionResult AddPoints(User user)
+        public IActionResult AddPoints(int id, int Points)
         {
-            User currentUser = user;
+            //User currentUser = user;
+            User currentUser = _userService.GetUserById(id);
             int linkedConnectedId = currentUser.ConnectedUserId;
             User linkedUser = _userService.GetUserById(linkedConnectedId);
-            _userService.AddPoints(linkedUser, 15);
+            _userService.AddPoints(linkedUser, Points);
             ViewBag.user = currentUser;
             ViewBag.linkedUser = linkedUser;
-            return RedirectToAction(nameof(Details));
-        }*/
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
