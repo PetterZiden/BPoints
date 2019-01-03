@@ -1,0 +1,29 @@
+﻿@using BPoints.Models
+@using BPoints.Models.Rewards
+@{
+    User currentUser = ViewBag.user;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BPoints</title>
+</head>
+<body>
+    <h3>Reward</h3>
+    <br />
+    <h4>@currentUser.UserName</h4>
+    <h4>Current Points: @currentUser.BPoints</h4>
+    @foreach (Reward item in (Reward[])ViewBag.rewards)
+    {
+        <span>@item.RewardName</span>
+        <span>@item.PointCost</span>
+        <a href="chosenreward/@currentUser.UserId/@item.RewardId">Choose</a>
+        <br />
+       
+    }
+<a href="..">Back</a>
+</body>
+</html>
