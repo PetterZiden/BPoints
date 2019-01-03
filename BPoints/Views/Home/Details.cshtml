@@ -1,4 +1,5 @@
 ﻿@using BPoints.Models
+@using BPoints.Models.Rewards
 @{
     User currentUser = ViewBag.user;
     User linkedUser = ViewBag.linkedUser;
@@ -21,6 +22,13 @@
     <br />
     <h4>Linked User: </h4><p>@linkedUser.UserName</p>
     <br />
+    <h4>Rewards available:</h4>
+    @foreach (Reward item in currentUser.RewardsToGet)
+    {
+        <span>@item.RewardName</span>
+        <br/>
+           
+    }
     <a href="..">Back</a>
 </body>
 </html>

@@ -67,5 +67,30 @@ namespace BPoints.Controllers
             ViewBag.linkedUser = linkedUser;
             return RedirectToAction(nameof(Index));
         }
+
+        [HttpGet]
+        [Route("rewards/{id}")]
+        public IActionResult Rewards(int id)
+        {
+            ViewBag.user = _userService.GetUserById(id);
+            ViewBag.rewards = _rewardService.GetAllRewards();
+
+            return View();
+        }
+
+        [HttpGet]
+        [Route("rewards/chosenreward/{id}/{rewardId}")]
+        public IActionResult ChosenReward(int id, int rewardId)
+        {
+            User currentUser = _userService.GetUserById(id);
+            Reward currentReward = _rewardService.GetRewardById(rewardId);
+            ViewBag.message = _rewardService.BuyReward(currentReward, currentUser);
+            ViewBag.user = currentUser;
+            ViewBag.reward = currentReward;
+            
+
+
+            return View();
+        }
     }
 }

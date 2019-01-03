@@ -1,7 +1,6 @@
-﻿using System;
+﻿using BPoints.Models.Rewards;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace BPoints.Models.Services
 {
@@ -21,6 +20,14 @@ namespace BPoints.Models.Services
         public void AddPoints(User user, int pointsToAdd)
         {
             user.BPoints += pointsToAdd;
+
+        }
+
+        public void AddRewardToGet(User user, Reward reward)
+        {
+            user.RewardsToGet.Add(reward);
+            User linkedUser = GetUserById(user.ConnectedUserId);
+            linkedUser.RewardsToDo.Add((reward));
 
         }
     }
