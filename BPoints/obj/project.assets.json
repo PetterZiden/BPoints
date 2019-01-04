@@ -12336,11 +12336,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\w100565\\Source\\Repos\\BPoints\\BPoints\\BPoints.csproj",
+      "projectUniqueName": "C:\\Users\\w100565\\source\\repos\\BPoints\\BPoints\\BPoints.csproj",
       "projectName": "BPoints",
-      "projectPath": "C:\\Users\\w100565\\Source\\Repos\\BPoints\\BPoints\\BPoints.csproj",
+      "projectPath": "C:\\Users\\w100565\\source\\repos\\BPoints\\BPoints\\BPoints.csproj",
       "packagesPath": "C:\\Users\\w100565\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\w100565\\Source\\Repos\\BPoints\\BPoints\\obj\\",
+      "outputPath": "C:\\Users\\w100565\\source\\repos\\BPoints\\BPoints\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

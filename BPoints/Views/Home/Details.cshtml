@@ -1,34 +1,24 @@
-﻿@using BPoints.Models
-@using BPoints.Models.Rewards
-@{
+﻿@{
     User currentUser = ViewBag.user;
     User linkedUser = ViewBag.linkedUser;
 }
 
 
-<!DOCTYPE html>
+<h1>@currentUser.UserName</h1>
+<br />
+<h4>Id: </h4><p>@currentUser.UserId</p>
+<br />
+<h4>Points: </h4><p>@currentUser.BPoints<p>
+    <br />
+    <h4>Linked User: </h4>
+<p>@linkedUser.UserName</p>
+<br />
+<h4>Rewards available:</h4>
+@foreach (Reward item in currentUser.RewardsToGet)
+{
+    <span>@item.RewardName</span>
+    <br />
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@currentUser.UserName</title>
-</head>
-<body>
-    <h1>@currentUser.UserName</h1>
-    <br />
-    <h4>Id: </h4><p>@currentUser.UserId</p>
-    <br />
-    <h4>Points: </h4><p>@currentUser.BPoints<p>
-    <br />
-    <h4>Linked User: </h4><p>@linkedUser.UserName</p>
-    <br />
-    <h4>Rewards available:</h4>
-    @foreach (Reward item in currentUser.RewardsToGet)
-    {
-        <span>@item.RewardName</span>
-        <br/>
-           
-    }
-    <a href="..">Back</a>
-</body>
-</html>
+}
+<br />
+<a href="..">Back</a>

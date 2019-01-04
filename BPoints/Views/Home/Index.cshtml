@@ -1,23 +1,10 @@
-﻿
-@using BPoints.Models
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>BPoints</title>
-</head>
-<body>
-    <h3>Index</h3>
-    @foreach (User item in (User[])ViewBag.users)
-    {
-        <span>@item.UserName</span>
-        <span>@item.BPoints</span>
-        <a href="details/@item.UserId">Details</a>
-        <a href="addpoints/@item.UserId">Add points</a>
-        <a href="rewards/@item.UserId">Reward</a>
-        <br />
-    }
-</body>
-</html>
+﻿<h3>Index</h3>
+@foreach (User item in (User[])ViewBag.users)
+{
+    <span>@item.UserName</span>
+    <span>@item.BPoints</span>
+    <a href="details/@item.UserId">Details</a>
+    <a href="addpoints/@item.UserId">Add points</a>
+    <a href="rewards/@item.UserId">Reward</a>
+    <br />
+}

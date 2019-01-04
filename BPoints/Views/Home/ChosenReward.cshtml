@@ -1,26 +1,15 @@
-﻿@using BPoints.Models
-@using BPoints.Models.Rewards
-@{
+﻿@{
     User currentUser = ViewBag.user;
     Reward currentReward = ViewBag.reward;
     String message = ViewBag.message;
 }
 
 
-<!DOCTYPE html>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>@currentReward.RewardName</title>
-</head>
-<body>
 <h3>@message</h3>
-<br/>
+<br />
 <h3>Reward: @currentReward.RewardName</h3>
-<br/>
+<br />
 <h4>@currentUser.UserName</h4>
 <h4>Points left: @currentUser.BPoints</h4>
 <a href="../../@currentUser.UserId">Back</a>
-</body>
-</html>
